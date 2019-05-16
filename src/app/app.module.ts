@@ -9,9 +9,10 @@ import { PlaceDetailsComponent } from './place/place-details/place-details.compo
 import { PlacesComponent } from './place/places/places.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import {Home2Component} from './home2/home2.component';
-import {AppRoutingModule} from './app-routing.module';
-import {PlaceService} from './place/place.service';
+import { AppRoutingModule } from './app-routing.module';
+import { PlaceService } from './place/place.service';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 
@@ -22,9 +23,10 @@ import {PlaceService} from './place/place.service';
     PlaceItemComponent,
     PlaceDetailsComponent,
     HomeComponent,
-    Home2Component,
     HeaderComponent,
-    PlacesComponent
+    PlacesComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

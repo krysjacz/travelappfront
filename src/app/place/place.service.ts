@@ -11,8 +11,7 @@ export class PlaceService {
   }
 
   getAllPlaces() {
-    return this.httpClient.get('http://localhost:8080/travelapp/place/all', {
-    });
+    return this.httpClient.get('http://localhost:8080/travelapp/place/all', {});
   }
 
 
