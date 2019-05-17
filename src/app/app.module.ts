@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AgmCoreModule } from '@agm/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PlaceListComponent } from './place/place-list/place-list.component';
@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PlaceService } from './place/place.service';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+
 
 
 
@@ -32,6 +33,9 @@ import { SignupComponent } from './auth/signup/signup.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCdg9F-dSztEEmaJUd5gSbUgAUTCM8pOes'
+    })
   ],
   providers: [PlaceService],
   bootstrap: [AppComponent]
