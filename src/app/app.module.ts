@@ -19,7 +19,6 @@ import {TokenService} from './token.service';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,8 +37,12 @@ import {TokenService} from './token.service';
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCdg9F-dSztEEmaJUd5gSbUgAUTCM8pOes'
+
     }),
     FormsModule
+
+    })
+
   ],
   providers: [AuthService, TokenService, PlaceService],
   bootstrap: [AppComponent]
