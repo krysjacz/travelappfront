@@ -1,6 +1,6 @@
 <div class="row">
   <div>
-    <h3>placesAddedByUsers</h3>
+    <h3>Miejsca dodane przez użytkownika</h3>
     <hr>
   </div>
 </div>
@@ -9,6 +9,12 @@
     <app-place-list></app-place-list>
   </div>
   <div class="col-md-6">
-<!--    <router-outlet></router-outlet>-->
+<!--    <app-g-map></app-g-map>-->
+
+      <agm-map [latitude]="lat" [longitude]="lng" [styles]="mapStyles" [zoom]="10" style="height: 400px">
+        <agm-marker *ngFor="let place of places" [latitude]="place.latitude" [longitude]="place.longitude" [title]="place.name" (markerClick)="changeCoordinates(place.latitude, place.longitude)" ></agm-marker>
+
+      </agm-map>
+    <router-outlet></router-outlet>
   </div>
 </div>

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
+import {User} from '../../user/user.model';
+import {NgForm} from '@angular/forms';
+import {AuthService} from '../auth.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  isAlertOpen: boolean;
+  responseStatus: number;
+
+
+  constructor(private authService: AuthService) {
+  }
 
   ngOnInit() {
   }
 
+  onSingup(form: NgForm) {
+
+      const user = new User(null, form.value.username, form.value.password, null, null);
+      this.authService.signupUser(user)
+        .subscribe(
+          (response) => {
+            this.responseStatus = response.status;
+            if (this.responseStatus === 200) {
+              console.log('git');
+            }
+          },
+          (error) => {
+            this.responseStatus = error.status;
+          }
+        );
+      form.reset();
+
+      this.isAlertOpen = true;
+  }
 }
