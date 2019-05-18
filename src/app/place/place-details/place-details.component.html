@@ -1,10 +1,15 @@
-<div>
-      <div class="list-group-item-heading">
-        <h2 class="center"><strong>{{place.name}}</strong></h2>
-        <hr>
-      </div>
-      <div class="list-group-item-text">
-        <h4>{{place.info}}</h4>
-      </div>
+
 <!--  <agm-marker [latitude]="place.latitude" [longitude]="place.longitude"></agm-marker>-->
-</div>
+  <div class="card mb-3">
+    <h5 class="card-header">{{place.name}}</h5>
+    <div class="card-body">
+      <h6 class="card-title">{{place.address}}</h6>
+    </div>
+    <div class="card-body">
+      <p>{{place.info}}</p>
+    </div>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>

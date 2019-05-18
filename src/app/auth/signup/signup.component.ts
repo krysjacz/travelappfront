@@ -2,6 +2,7 @@ import {Component, OnInit, TemplateRef} from '@angular/core';
 import {User} from '../../user/user.model';
 import {NgForm} from '@angular/forms';
 import {AuthService} from '../auth.service';
+// import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 
 
 @Component({
