@@ -28,4 +28,15 @@ export class PlaceService {
         }),
         observe: 'response', responseType: 'json'});
     }
+
+  addVisit(placeId: number) {
+      return this.httpClient.post('http://localhost:8080/visit/add',
+        {userId: this.tokenService.getUserId(), placeId: placeId},
+        {
+          headers: new HttpHeaders({
+            'Token': this.tokenService.getUserToken()
+          }),
+          observe: 'response', responseType: 'json'
+        });
+  }
 }
