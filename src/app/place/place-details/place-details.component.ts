@@ -12,6 +12,9 @@ export class PlaceDetailsComponent implements OnInit {
 
   place: Place;
 
+  isAlertOpen: boolean;
+  responseStatus: number;
+
   constructor(private placeService: PlaceService, private route: ActivatedRoute) {
     this.place = new Place();
   }
@@ -30,6 +33,21 @@ export class PlaceDetailsComponent implements OnInit {
         );
       }
     );
+  }
+
+  onAddVisit() {
+    this.placeService.addVisit(this.place.id).subscribe(
+      (response) => {
+        this.responseStatus = response.status;
+        if (this.responseStatus === 200) {
+          console.log('gitowa');
+        }
+      },
+      (error) => {
+        this.responseStatus = error.status;
+      }
+    );
+    this.isAlertOpen = true;
   }
 
 

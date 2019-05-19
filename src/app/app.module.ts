@@ -16,6 +16,9 @@ import { SignupComponent } from './auth/signup/signup.component';
 import {FormsModule} from '@angular/forms';
 import {AuthService} from './auth/auth.service';
 import {TokenService} from './token.service';
+import { VisitItemComponent } from './visit/visit-item/visit-item.component';
+import { VisitListComponent } from './visit/visit-list/visit-list.component';
+import {AccordionModule} from 'ngx-bootstrap';
 
 
 
@@ -30,7 +33,9 @@ import {TokenService} from './token.service';
     HeaderComponent,
     PlacesComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    VisitItemComponent,
+    VisitListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import {TokenService} from './token.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCdg9F-dSztEEmaJUd5gSbUgAUTCM8pOes'
     }),
-    FormsModule
+    FormsModule,
+    AccordionModule
   ],
   providers: [AuthService, TokenService, PlaceService],
   bootstrap: [AppComponent]

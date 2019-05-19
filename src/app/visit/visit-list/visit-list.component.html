@@ -1,0 +1,4 @@
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" [ngSwitch]="routeUrl">
+    <h3 *ngSwitchCase="'placesVisited'">Odwiedzone miejsca</h3>
+    <h3 *ngSwitchCase="'placesToVisit'">Miejsca do odwiedzenia</h3>
+      <app-visit-item *ngFor="let visit of visits" [visit]="visit"></app-visit-item>

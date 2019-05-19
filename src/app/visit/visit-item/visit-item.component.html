@@ -1,0 +1,15 @@
+<div class="list-group">
+  <a class="list-group-item clearfix">
+    <div>
+      <h5 class="list-group-item-heading">{{place.name}}</h5>
+    </div>
+    <div class="row" [ngSwitch]="routeUrl">
+      <div class="column" *ngSwitchCase="'placesToVisit'">
+        <button class="btn-primary" (click)="setVisitAsVisited()">Oznacz jako odwiedzone</button>
+      </div>
+      <div class="column">
+        <button class="btn-danger" (click)="onDeletePlaceToVisit()">Usuń z listy</button>
+      </div>
+    </div>
+  </a>
+</div>

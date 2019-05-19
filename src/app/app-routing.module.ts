@@ -7,6 +7,7 @@ import {SigninComponent} from './auth/signin/signin.component';
 import {PlacesComponent} from './place/places/places.component';
 import {PlaceDetailsComponent} from './place/place-details/place-details.component';
 import {AuthGuardService} from './auth/auth-guard.service';
+import {VisitListComponent} from './visit/visit-list/visit-list.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,9 @@ const appRoutes: Routes = [
     children: [
       {path: ':id', component: PlaceDetailsComponent}
     ]
-  }
+  },
+  {path: 'placesToVisit', component: VisitListComponent, canActivate: [AuthGuardService]},
+  {path: 'placesVisited', component: VisitListComponent, canActivate: [AuthGuardService]}
 
 ];
 
